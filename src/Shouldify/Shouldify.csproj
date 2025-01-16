@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="Shouldify.MSTest" />
-    <InternalsVisibleTo Include="Shouldify.NUnit" />
-    <InternalsVisibleTo Include="Shouldify.TUnit" />
-    <InternalsVisibleTo Include="Shouldify.XUnit" />
-    <InternalsVisibleTo Include="Shouldify.XUnit3" />
+    <InternalsVisibleTo Include="Shouldify.MSTest.Tests" />
+    <InternalsVisibleTo Include="Shouldify.NUnit.Tests" />
+    <InternalsVisibleTo Include="Shouldify.TUnit.Tests" />
+    <InternalsVisibleTo Include="Shouldify.XUnit.Tests" />
+    <InternalsVisibleTo Include="Shouldify.XUnit3.Tests" />
   </ItemGroup>
 
 </Project>

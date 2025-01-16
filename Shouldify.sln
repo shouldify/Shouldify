@@ -9,23 +9,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shouldify", "src\Shouldify\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AE8BFE54-FB7B-4C72-B3FB-E1E57502FD9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shouldify.NUnit", "tests\Shouldify.NUnit\Shouldify.NUnit.csproj", "{88DA6E82-9475-491E-9D97-E9F95726D734}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shouldify.NUnit.Tests", "tests\Shouldify.NUnit.Tests\Shouldify.NUnit.Tests.csproj", "{88DA6E82-9475-491E-9D97-E9F95726D734}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shouldify.XUnit", "tests\Shouldify.XUnit\Shouldify.XUnit.csproj", "{4410D3B5-E8C4-4A51-A298-C8A7290FBEA5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shouldify.XUnit.Tests", "tests\Shouldify.XUnit.Tests\Shouldify.XUnit.Tests.csproj", "{4410D3B5-E8C4-4A51-A298-C8A7290FBEA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shouldify.MSTest", "tests\Shouldify.MSTest\Shouldify.MSTest.csproj", "{80C25B62-9DE2-4633-A26E-17E849551D5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shouldify.MSTest.Tests", "tests\Shouldify.MSTest.Tests\Shouldify.MSTest.Tests.csproj", "{80C25B62-9DE2-4633-A26E-17E849551D5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shouldify.TUnit", "tests\Shouldify.TUnit\Shouldify.TUnit.csproj", "{9B097C89-A55F-4442-847D-4A77F6C74DBC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shouldify.TUnit.Tests", "tests\Shouldify.TUnit.Tests\Shouldify.TUnit.Tests.csproj", "{9B097C89-A55F-4442-847D-4A77F6C74DBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shouldify.XUnit3", "tests\Shouldify.XUnit3\Shouldify.XUnit3.csproj", "{FA4CEB8B-427E-4E2C-9F9C-27CA76F592C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shouldify.XUnit3.Tests", "tests\Shouldify.XUnit3.Tests\Shouldify.XUnit3.Tests.csproj", "{FA4CEB8B-427E-4E2C-9F9C-27CA76F592C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{955D225C-9451-494C-863E-469F85AADF07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -52,6 +49,9 @@ Global
 		{FA4CEB8B-427E-4E2C-9F9C-27CA76F592C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA4CEB8B-427E-4E2C-9F9C-27CA76F592C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA4CEB8B-427E-4E2C-9F9C-27CA76F592C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{955D225C-9451-494C-863E-469F85AADF07} = {9E673C98-633A-41AC-B211-4033F1B4CE9F}
