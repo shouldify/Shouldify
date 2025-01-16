@@ -7,4 +7,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="Shouldify.MSTest" />
+    <InternalsVisibleTo Include="Shouldify.NUnit" />
+    <InternalsVisibleTo Include="Shouldify.TUnit" />
+    <InternalsVisibleTo Include="Shouldify.XUnit" />
+    <InternalsVisibleTo Include="Shouldify.XUnit3" />
+  </ItemGroup>
+
 </Project>

@@ -13,6 +13,10 @@ public static class ExceptionExtensions
         {
             return;
         }
+        catch (TException exception) when (message is not null && exception.Message != message)
+        {
+            Shouldify.Throw($"Expected exception message to be '{message}', but was '{exception.Message}'.");
+        }
         catch (Exception exception)
         {
             Shouldify.Throw($"Expected '{typeof(TException).Name}' to be thrown, but '{exception.GetType().Name}' was thrown.");

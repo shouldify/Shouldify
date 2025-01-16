@@ -1,16 +1,16 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using System.Reflection;
 
 namespace Shouldify;
 
 internal static class Shouldify
 {
-    private static readonly (string AssemblyName, string ExceptionFullName, bool LoadAssembly)[] _testingFrameworks =
+    private static readonly (string AssemblyName, string ExceptionFullName)[] _testingFrameworks =
     [
-        ("nunit.framework", "NUnit.Framework.AssertionException", false),
-        ("xunit.assert", "Xunit.Sdk.XunitException", true),
-        ("xunit.v3.assert", "Xunit.Sdk.XunitException", true),
-        ("TUnit.Assertions.Exceptions.AssertionException", "TUnit.Assertions", true),
+        ("Microsoft.VisualStudio.TestPlatform.TestFramework", "Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException"),
+        ("nunit.framework", "NUnit.Framework.AssertionException"),
+        ("xunit.assert", "Xunit.Sdk.XunitException"),
+        ("xunit.v3.assert", "Xunit.Sdk.XunitException"),
+        ("TUnit.Assertions", "TUnit.Assertions.Exceptions.AssertionException"),
     ];
 
     private static readonly Func<string, Exception> _exceptionFactory = GetExceptionFactory();
@@ -22,44 +22,20 @@ internal static class Shouldify
     {
         var assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
-        foreach (var (assemblyName, exceptionFullName, loadAssembly) in _testingFrameworks)
+        foreach (var (assemblyName, exceptionFullName) in _testingFrameworks)
         {
-            if (!TryGetAssembly(assemblies, assemblyName, loadAssembly, out var assembly))
+            var assembly = assemblies.FirstOrDefault(a => a.GetName().Name == assemblyName);
+
+            if (assembly is null)
             {
                 continue;
             }
 
-            var exceptionType = assembly.GetType(exceptionFullName)!;
+            var exceptionType = assembly.GetType(exceptionFullName);
 
-            return message => (Exception)Activator.CreateInstance(exceptionType, message)!;
+            return message => (Exception)Activator.CreateInstance(exceptionType, message);
         }
 
         throw new InvalidOperationException("Could not find the testing framework.");
-    }
-
-    private static bool TryGetAssembly(Assembly[] assemblies, string assemblyName, bool loadAssembly, [NotNullWhen(true)] out Assembly? assembly)
-    {
-        assembly = assemblies.FirstOrDefault(a => a.GetName().Name == assemblyName);
-
-        if (assembly is not null)
-        {
-            return true;
-        }
-
-        if (!loadAssembly)
-        {
-            return false;
-        }
-
-        try
-        {
-            assembly = Assembly.Load(new AssemblyName(assemblyName));
-        }
-        catch (Exception)
-        {
-            return false;
-        }
-
-        return true;
     }
 }
