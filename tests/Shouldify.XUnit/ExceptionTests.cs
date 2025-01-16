@@ -5,7 +5,7 @@ namespace Shouldify.XUnit;
 public class ExceptionTests
 {
     [Fact]
-    public void ShouldifyThrow_ShouldThrowTheCorrectNUnitException()
+    public void ShouldifyThrow_ShouldThrowTheCorrectXUnitException()
     {
         var action = () => Shouldify.Throw("An exception message");
 
@@ -13,7 +13,7 @@ public class ExceptionTests
     }
 
     [Fact]
-    public void ShouldifyThrow_ShouldThrowTheCorrectNUnitExceptionWithTheCorrectMessage()
+    public void ShouldifyThrow_ShouldThrowTheCorrectXUnitExceptionWithTheCorrectMessage()
     {
         const string Message = "An exception message";
 

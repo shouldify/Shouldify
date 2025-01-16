@@ -1,11 +1,11 @@
 ﻿using Xunit.Sdk;
 
-namespace Shouldify.XUnit;
+namespace Shouldify.XUnit3;
 
 public class ExceptionTests
 {
     [Fact]
-    public void ShouldifyThrow_ShouldThrowTheCorrectNUnitException()
+    public void ShouldifyThrow_ShouldThrowTheCorrectXUnit3Exception()
     {
         var action = () => Shouldify.Throw("An exception message");
 
@@ -13,7 +13,7 @@ public class ExceptionTests
     }
 
     [Fact]
-    public void ShouldifyThrow_ShouldThrowTheCorrectNUnitExceptionWithTheCorrectMessage()
+    public void ShouldifyThrow_ShouldThrowTheCorrectXUnit3ExceptionWithTheCorrectMessage()
     {
         const string Message = "An exception message";
 

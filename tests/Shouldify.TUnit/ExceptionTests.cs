@@ -5,7 +5,7 @@ namespace Shouldify.TUnit;
 public class ExceptionTests
 {
     [Test]
-    public void ShouldifyThrow_ShouldThrowTheCorrectNUnitException()
+    public void ShouldifyThrow_ShouldThrowTheCorrectTUnitException()
     {
         var action = () => Shouldify.Throw("An exception message");
 
@@ -13,7 +13,7 @@ public class ExceptionTests
     }
 
     [Test]
-    public void ShouldifyThrow_ShouldThrowTheCorrectNUnitExceptionWithTheCorrectMessage()
+    public void ShouldifyThrow_ShouldThrowTheCorrectTUnitExceptionWithTheCorrectMessage()
     {
         const string Message = "An exception message";
 

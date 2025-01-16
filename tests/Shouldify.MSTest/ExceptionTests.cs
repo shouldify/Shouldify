@@ -4,7 +4,7 @@
 public sealed class ExceptionTests
 {
     [TestMethod]
-    public void ShouldifyThrow_ShouldThrowTheCorrectNUnitException()
+    public void ShouldifyThrow_ShouldThrowTheCorrectMSTestException()
     {
         var action = () => Shouldify.Throw("An exception message");
 
@@ -12,7 +12,7 @@ public sealed class ExceptionTests
     }
 
     [TestMethod]
-    public void ShouldifyThrow_ShouldThrowTheCorrectNUnitExceptionWithTheCorrectMessage()
+    public void ShouldifyThrow_ShouldThrowTheCorrectMSTestExceptionWithTheCorrectMessage()
     {
         const string Message = "An exception message";
 
